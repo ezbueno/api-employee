@@ -1,0 +1,3 @@
+INSERT INTO Employee(name, address, salary, seniority_level, role, entry_date) VALUES('Ezandro Bueno', 'Rua Santa Efigênia, 1500', 5000, 'Senior-Level', 'Java Developer', TIMESTAMP WITH TIME ZONE '2018-07-21T20:00:19Z');
+INSERT INTO Employee(name, address, salary, seniority_level, role, entry_date) VALUES('Nayara Balarotti', 'Rua do Carmo, 932', 4000, 'Mid-Level', 'Front-End Developer', TIMESTAMP WITH TIME ZONE '2016-10-12T10:00:00Z');
+INSERT INTO Employee(name, address, salary, seniority_level, role, entry_date) VALUES('Emnie Ayoub', 'Rua do Limão, 420', 3000, 'Entry-Level', 'C# Developer', TIMESTAMP WITH TIME ZONE '2014-03-11T18:30:11Z');
