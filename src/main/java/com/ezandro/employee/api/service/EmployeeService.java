@@ -29,4 +29,36 @@ public class EmployeeService {
 		List<Employee> employee = employeeRepository.findAll();
 		return employee.stream().map(e -> new EmployeeDTO(e)).collect(Collectors.toList());
 	}
+	
+	@Transactional
+	public EmployeeDTO insert(EmployeeDTO dto) {
+		Employee employee = new Employee();
+		employee.setName(dto.getName());
+		employee.setAddress(dto.getAddress());
+		employee.setSalary(dto.getSalary());
+		employee.setSeniorityLevel(dto.getSeniorityLevel());
+		employee.setRole(dto.getRole());
+		employee.setEntryDate(dto.getEntryDate());
+		employee = employeeRepository.save(employee);
+		return new EmployeeDTO(employee);
+	}
+	
+	@Transactional
+	public EmployeeDTO update(Long id, EmployeeDTO dto) {
+		findById(id);
+		
+		Employee employee = employeeRepository.getOne(id);
+		employee.setName(dto.getName());
+		employee.setAddress(dto.getAddress());
+		employee.setSalary(dto.getSalary());
+		employee.setSeniorityLevel(dto.getSeniorityLevel());
+		employee.setRole(dto.getRole());
+		employee.setEntryDate(dto.getEntryDate());
+		return new EmployeeDTO(employee);
+	}
+	
+	public void deleteById(Long id) {
+		findById(id);
+		employeeRepository.deleteById(id);
+	}
 }
